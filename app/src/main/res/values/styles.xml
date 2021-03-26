@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@android:color/white</item>
+
+        <!-- FONTS -->
+        <item name="android:fontFamily">@font/questrial</item>
+        <item name="fontFamily">@font/questrial</item>
+
+
+        <!-- BOTTOM NAVIGATION -->
+        <item name="bottomNavigationStyle">@style/BottomMenuStyle</item>
+    </style>
+
+
+    <!-- Bottom Menu style - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -->
+    <style name="BottomMenuStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="itemTextColor">?attr/colorOnSurface</item>
+        <item name="itemTextAppearanceActive">@style/BottomMenuActiveTextStyle</item>
+        <item name="itemTextAppearanceInactive">@style/BottomMenuActiveTextStyle</item>
+    </style>
+
+    <!-- Bottom Menu text style (active) - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -->
+    <style name="BottomMenuActiveTextStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">@dimen/dimen_12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+
+
+    </style>
+    <!-- BODY TEXT1 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="TextAppearance.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/colorOnSurface</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/dimen_16sp</item>
+    </style>
+ 
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.portfolio.model.portfolio.details.ImageApp" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_120sdp"
+            tools:background="@tools:sample/backgrounds/scenic"
+            imageUri="@{model.image}"
+            />
+    </LinearLayout>
+</layout>

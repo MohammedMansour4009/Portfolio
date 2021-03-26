@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.portfolio.model.portfolio.details.Skills" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/_30sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            tools:background="@drawable/ic_menu_profile_avd"
+            imageUri="@{model.icon}"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="JETPACK"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textAllCaps="true"
+            android:text="@{model.name}"
+            />
+
+    </LinearLayout>
+</layout>
