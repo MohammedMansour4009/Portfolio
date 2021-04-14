@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.portfolio.model.profile.Media" />
+            type="com.zero1tec.portfolio.model.profile.Media" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

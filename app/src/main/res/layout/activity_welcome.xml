@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.portfolio.ui.welcom.WelcomeViewModel" />
+            type="com.zero1tec.portfolio.ui.welcom.WelcomeViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

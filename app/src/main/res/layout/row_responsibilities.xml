@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.portfolio.model.experience.details.InfoResponsibilities" />
+            type="com.zero1tec.portfolio.model.experience.details.InfoResponsibilities" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

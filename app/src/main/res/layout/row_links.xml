@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.portfolio.model.experience.details.InfoLink" />
+            type="com.zero1tec.portfolio.model.experience.details.InfoLink" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -7,10 +7,10 @@
 
         <variable
             name="model"
-            type="com.example.portfolio.model.welcom.InfoWelcome" />
+            type="com.zero1tec.portfolio.model.welcom.InfoWelcome" />
         <variable
             name="viewModel"
-            type="com.example.portfolio.ui.welcom.WelcomeViewModel" />
+            type="com.zero1tec.portfolio.ui.welcom.WelcomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,7 +60,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title"
             tools:background="@drawable/welcome3"
-            imageUriWelcome="@{model.image}"
+            imageWelcome="@{model.image}"
             />
 
 

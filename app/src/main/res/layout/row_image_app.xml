@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.portfolio.model.portfolio.details.ImageApp" />
+            type="com.zero1tec.portfolio.model.portfolio.details.ImageApp" />
 
     </data>
 

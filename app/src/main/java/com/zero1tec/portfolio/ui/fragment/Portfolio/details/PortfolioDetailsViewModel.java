@@ -1,0 +1,38 @@
+package com.zero1tec.portfolio.ui.fragment.Portfolio.details;
+
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.MediatorLiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+
+import com.zero1tec.portfolio.model.portfolio.details.PortfolioDetails;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+public class PortfolioDetailsViewModel extends ViewModel {
+    private final String TAG = " PortfolioDetailsViewModel";
+    private final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+    public MutableLiveData<PortfolioDetails> profileLiveData = new MediatorLiveData<>();
+
+
+
+    public void getPortfolioDetailsFromDatabase() {
+        mDatabase.child("info Activity PortfolioDetails ").child("PortfolioDetails").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                profileLiveData.setValue( snapshot.getValue(PortfolioDetails.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d(TAG, "onCancelled: in upload PortfolioDetailsFragment model form data base " + error.getMessage() + "code =" + error.getCode());
+            }
+        });
+
+    }
+}

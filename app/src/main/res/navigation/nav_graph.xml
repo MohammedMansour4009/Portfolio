@@ -6,12 +6,12 @@
     app:startDestination="@id/profile">
     <fragment
         android:id="@+id/profile"
-        android:name="com.example.portfolio.ui.fragment.profile.ProfileFragment"
+        android:name="com.zero1tec.portfolio.ui.fragment.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/portfolioFragment"
-        android:name="com.example.portfolio.ui.fragment.Portfolio.PortfolioFragment"
+        android:name="com.zero1tec.portfolio.ui.fragment.Portfolio.PortfolioFragment"
         android:label="Portfolio"
         tools:layout="@layout/fragment_portfolio" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/experienceFragment"
-        android:name="com.example.portfolio.ui.fragment.experience.ExperienceFragment"
+        android:name="com.zero1tec.portfolio.ui.fragment.experience.ExperienceFragment"
         android:label="Experience"
         tools:layout="@layout/fragment_experience" >
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/portfolioDetailsFragment"
-        android:name="com.example.portfolio.ui.fragment.Portfolio.details.PortfolioDetailsFragment"
+        android:name="com.zero1tec.portfolio.ui.fragment.Portfolio.details.PortfolioDetailsFragment"
         tools:layout="@layout/fragment_portfolio_details">
         <argument
             android:name="id"
@@ -38,12 +38,12 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment2"
-        android:name="com.example.portfolio.ui.fragment.srttings.SettingsFragment"
+        android:name="com.zero1tec.portfolio.ui.fragment.srttings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/experienceDetailsFragment"
-        android:name="com.example.portfolio.ui.fragment.experience.details.ExperienceDetailsFragment"
+        android:name="com.zero1tec.portfolio.ui.fragment.experience.details.ExperienceDetailsFragment"
         tools:layout="@layout/fragment_experience_details">
         <argument
             android:name="id"

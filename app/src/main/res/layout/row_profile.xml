@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.example.portfolio.model.profile.MoreInfo" />
+            type="com.zero1tec.portfolio.model.profile.MoreInfo" />
     </data>
 
     <LinearLayout

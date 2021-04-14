@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.example.portfolio.model.profile.Profile" />
+            type="com.zero1tec.portfolio.model.profile.Profile" />
 
     </data>
 

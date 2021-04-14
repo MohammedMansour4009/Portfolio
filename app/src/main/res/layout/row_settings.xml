@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.example.portfolio.model.setting.Options" />
+            type="com.zero1tec.portfolio.model.setting.Options" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
