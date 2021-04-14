@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.portfolio.model.profile.Profile" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_sheet_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/layout_bottom_sheet_scene"
+        >
+
+        <View
+            android:id="@+id/indicator"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rounded_indicator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/civ_icon_sheet" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_icon_sheet"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            imageUri="@{model.icHand}"
+            app:civ_border_width="@dimen/_1sdp"
+            app:civ_border_color="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@+id/indicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/divider_top"
+            tools:src="@drawable/profile"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:src="@{model.image}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_in_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/dimen_16sp"
+            app:layout_constraintTop_toTopOf="@+id/civ_icon_sheet"
+            app:layout_constraintStart_toEndOf="@+id/civ_icon_sheet"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="@{model.textName}"
+            tools:text="Mohammed "
+            android:layout_marginLeft="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textSize="@dimen/dimen_14sp"
+            app:layout_constraintStart_toEndOf="@+id/civ_icon_sheet"
+            app:layout_constraintBottom_toBottomOf="@+id/civ_icon_sheet"
+            android:textColor="@android:color/darker_gray"
+            android:text="@{model.email}"
+            tools:text="@tools:sample/full_names"
+            android:layout_marginLeft="@dimen/_10sdp" />
+
+        <View
+            android:id="@+id/divider_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="?attr/colorOnSecondary"
+            app:layout_constraintTop_toBottomOf="@+id/civ_icon_sheet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/rv_media" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_media"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/civ_icon_sheet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cl_contact_me"
+            tools:listitem="@tools:sample/avatars"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_contact_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@+id/rv_media"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            >
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="?attr/colorOnSecondary"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_contact_me" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_contact_me_in_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:lineSpacingExtra="@dimen/_5sdp"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintTop_toBottomOf="@id/view_divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/colorControlActivated"
+                android:text="@string/copy_right"
+                android:gravity="center"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_contact_me2_in_sheet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:textSize="@dimen/dimen_14sp"
+                app:layout_constraintTop_toBottomOf="@id/tv_contact_me_in_sheet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorControlActivated"
+                android:text="@string/email"
+                android:drawableLeft="@drawable/ic_email"
+                android:paddingLeft="@dimen/_50sdp"
+                android:drawableTint="@color/colorGray"
+                android:drawablePadding="@dimen/_5sdp"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

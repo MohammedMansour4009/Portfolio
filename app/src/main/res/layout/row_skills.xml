@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="@color/colorSurface"
         android:orientation="vertical"
         android:layout_marginHorizontal="@dimen/_30sdp">
 
@@ -30,6 +31,8 @@
             android:layout_marginTop="@dimen/_2sdp"
             android:textAllCaps="true"
             android:text="@{model.name}"
+            android:textColor="@color/colorHeaderTitle"
+
             />
 
     </LinearLayout>

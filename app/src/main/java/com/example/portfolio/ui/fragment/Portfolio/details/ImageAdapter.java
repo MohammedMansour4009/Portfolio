@@ -16,10 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.carViewHolder> {
+public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
     private List<ImageApp> imageAppList;
 
-    public ImageAdapter( ) {//Because get data from out
+    public ImageAdapter( ) {
         this.imageAppList = new ArrayList<>();
     }
 
@@ -28,19 +28,19 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.carViewHolde
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public void setPortfolioList(List<ImageApp> ImageAppList) {
+    public void setImageAppList(List<ImageApp> ImageAppList) {
         this.imageAppList = ImageAppList;
     }
 
     @NonNull
     @Override
-    public ImageAdapter.carViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//inflate of layout and Components
+    public ImageAdapter.ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_image_app, parent, false);
-        return new ImageAdapter.carViewHolder(RowImageAppBinding.bind(view));
+        return new ImageAdapter.ImageViewHolder(RowImageAppBinding.bind(view));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ImageAdapter.carViewHolder holder, final int position) {// put new data ever time
+    public void onBindViewHolder(@NonNull ImageAdapter.ImageViewHolder holder, final int position) {
         ImageApp skills = imageAppList.get(position);
         holder.binding.setModel(skills);
     }
@@ -51,10 +51,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.carViewHolde
         return imageAppList.size();
     }
 
-    class carViewHolder extends RecyclerView.ViewHolder {//declare elements and but resources
+    class ImageViewHolder extends RecyclerView.ViewHolder {
         RowImageAppBinding binding;
 
-        public carViewHolder(@NonNull RowImageAppBinding binding) {
+        public ImageViewHolder(@NonNull RowImageAppBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

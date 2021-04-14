@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.MainActivity">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_header_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/collapsing"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_icon_header"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/mohammed"
+            app:civ_border_color="@android:color/white"
+            app:civ_border_width="@dimen/_1sdp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_header_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tv_header_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_4sdp"
+            android:textSize="@dimen/dimen_16sp"
+            android:textColor="@color/colorOnPrimary"
+            android:text="Mohammed Mansour"
+            app:layout_constraintBottom_toTopOf="@+id/tv_header_profession"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_icon_header"/>
+
+        <TextView
+            android:id="@+id/tv_header_profession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textSize="@dimen/dimen_14sp"
+            android:textColor="@color/colorOnPrimary"
+            android:text="Android Developer"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_header_name"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -16,4 +16,6 @@
     <string name="privacy">Privacy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="copy_right">You can get in touch with me  </string>
+    <string name="email">mohammed.mansour4009@gmail.com  </string>
 </resources>

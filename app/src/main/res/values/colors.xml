@@ -7,7 +7,11 @@
     <color name="colorPrimaryDark">#014384</color>
     <color name="colorOnPrimary">@android:color/white</color>
 
+    <color name="colorGray">@android:color/darker_gray</color>
+
+
     <color name="colorSurface">@android:color/white</color>
+    <color name="colorStrokeButton">@android:color/black</color>
 
     <!-- Title -->
     <color name="colorOnPrimarySurface">#1A2025</color>
@@ -22,7 +26,9 @@
 
     <!-- Header list item -->
     <color name="colorHeaderBackground">#E2E2E2</color>
-    <color name="colorHeaderTitle">#5F6368</color>
+    <color name="colorHeaderTitle">#303032</color>
+    <color name="colorHeaderBackground2">@color/colorLogoGreyDark</color>
+
 
     <!-- Border -->
     <color name="colorBorder">#E2E2E2</color>

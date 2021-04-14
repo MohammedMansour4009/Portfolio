@@ -25,7 +25,7 @@ public class WelcomeViewModel extends ViewModel {
 
     public void getWelcomeFromDatabase() {// its first task for View Model
         List<InfoWelcome> infoWelcomeList = new ArrayList<>();
-        mDatabase.child("Info Screen Welcome ").child("info").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Welcome").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot snap : snapshot.getChildren()) {

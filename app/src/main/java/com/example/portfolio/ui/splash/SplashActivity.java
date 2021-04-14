@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 import com.example.portfolio.databinding.ActivitySplashBinding;
 import com.example.portfolio.ui.main.BaseBindingActivity;
 import com.example.portfolio.ui.main.MainActivity;
@@ -23,6 +25,7 @@ public class SplashActivity extends BaseBindingActivity<ActivitySplashBinding> {
     }
 
     private void init() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         handler = new Handler();
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();

@@ -21,8 +21,8 @@ public class PortfolioViewModel extends ViewModel {
 
 
 
-    public void getPortfolioFromDatabase() {// its first task for View Model
-        mDatabase.child("info Activity Portfolio ").child("Portfolio").addValueEventListener(new ValueEventListener() {
+    public void getPortfolioFromDatabase() {
+        mDatabase.child("Portfolio").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 profileLiveData.setValue( snapshot.getValue(Portfolio.class));

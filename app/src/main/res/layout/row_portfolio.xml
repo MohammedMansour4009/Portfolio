@@ -16,14 +16,13 @@
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_5sdp"
         app:cardCornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/colorSurface"
         android:elevation="@dimen/_2sdp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_5sdp"
             app:layout_constraintTop_toTopOf="parent"
-
             >
 
             <ImageView
@@ -53,22 +52,24 @@
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="@{model.nameApp}"
-                android:textColor="@android:color/black"
                 android:textSize="@dimen/_10sdp"
                 app:layout_constraintStart_toEndOf="@id/iv_icon_app"
                 app:layout_constraintTop_toTopOf="@id/iv_app"
                 tools:text="Portfolio App 2.0"
                 android:paddingRight="@dimen/_5sdp"
+                android:textColor="@color/colorHeaderTitle"
+
                 />
 
             <TextView
-                android:id="@+id/tv_description"
+                android:id="@+id/tv_company_name"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:text="@{model.descriptionApp}"
                 android:textSize="@dimen/_10sdp"
                 android:paddingRight="@dimen/_5sdp"
+                android:textColor="@color/colorOnSurface"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/iv_icon_app"
                 app:layout_constraintTop_toBottomOf="@id/iv_icon_app"
@@ -88,6 +89,7 @@
                 app:layout_constraintStart_toStartOf="@id/iv_icon_app"
                 tools:text=" ssadsad  dsad ad as asdasd  sad"
                 android:textSize="@dimen/_8sdp"
+                android:textColor="@color/colorOnSurface"
                 android:drawablePadding="@dimen/_5sdp"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>

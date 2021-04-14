@@ -70,15 +70,12 @@ public class PortfolioFragment extends Fragment  implements InfoAppAdapter.OnPor
     }
 
     private void getRemoteInfoApp() {
-        profileViewModel.profileLiveData.observe(getViewLifecycleOwner(), new Observer<Portfolio>() {
-            @Override
-            public void onChanged(Portfolio profile) {
-                infoAppList=profile.getInfoAppList();
-                infoAppAdapter.setPortfolioList(infoAppList);
-                binding.rvPortfolio.setAdapter(infoAppAdapter);
-                binding.rvPortfolio.getAdapter().notifyDataSetChanged();
+        profileViewModel.profileLiveData.observe(getViewLifecycleOwner(), profile -> {
+            infoAppList=profile.getInfoAppList();
+            infoAppAdapter.setPortfolioList(infoAppList);
+            binding.rvPortfolio.setAdapter(infoAppAdapter);
+            binding.rvPortfolio.getAdapter().notifyDataSetChanged();
 
-            }
         });
     }
 

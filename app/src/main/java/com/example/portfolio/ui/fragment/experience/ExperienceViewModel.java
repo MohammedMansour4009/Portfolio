@@ -21,11 +21,10 @@ public class ExperienceViewModel extends ViewModel {
 
 
 
-    public void getExperienceFromDatabase() {// its first task for View Model
-        mDatabase.child("info Activity Experience ").child("Experience").addValueEventListener(new ValueEventListener() {
+    public void getExperienceFromDatabase() {
+        mDatabase.child("Experience").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Experience experience =  snapshot.getValue(Experience.class);
                 profileLiveData.setValue( snapshot.getValue(Experience.class));
             }
 

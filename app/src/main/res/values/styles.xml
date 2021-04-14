@@ -9,10 +9,17 @@
         <!-- FONTS -->
         <item name="android:fontFamily">@font/questrial</item>
         <item name="fontFamily">@font/questrial</item>
-
+        <item name="android:windowBackground">@color/colorSurface</item>
 
         <!-- BOTTOM NAVIGATION -->
         <item name="bottomNavigationStyle">@style/BottomMenuStyle</item>
+
+        <!-- BOTTOM SHEET -->
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <!-- Background -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <!-- Text -->
+        <item name="colorOnSurface">@color/colorOnSurface</item>
     </style>
 
 
@@ -40,5 +47,17 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">@dimen/dimen_16sp</item>
     </style>
- 
+
+    <!-- BottomSheetDialog - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <!-- ModalBottomSheet - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_dialog</item>
+    </style>
+
 </resources>

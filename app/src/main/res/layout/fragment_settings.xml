@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.portfolio.model.setting.Setting" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSurface"
+        tools:context=".ui.fragment.srttings.SettingsFragment"
+        android:id="@+id/constraint_layout_setting_fragment"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_option"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/row_title_option" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_thanks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/colorHeaderBackground"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="Thanks for visitung my Portfolio"
+            android:textAllCaps="true"
+            android:textColor="@color/colorHeaderTitle"
+            android:textSize="@dimen/dimen_15sp"
+            android:gravity="center"
+            app:textAllCaps="false"
+
+            app:layout_constraintTop_toBottomOf="@id/rv_option" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_contact_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_5sdp"
+            android:text="@string/copy_right"
+            android:textColor="@color/colorControlActivated"
+            android:textSize="@dimen/dimen_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_thanks" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_contact_me2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textSize="@dimen/dimen_14sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_contact_me"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/colorControlActivated"
+            android:text="@string/email"
+            android:drawableLeft="@drawable/ic_email"
+            android:paddingLeft="@dimen/_50sdp"
+            android:drawableTint="@color/colorGray"
+            android:drawablePadding="@dimen/_5sdp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

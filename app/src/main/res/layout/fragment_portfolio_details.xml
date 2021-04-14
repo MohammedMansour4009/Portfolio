@@ -4,24 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="model"
             type="com.example.portfolio.model.portfolio.details.PortfolioDetails" />
 
     </data>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.fragment.Portfolio.details.PortfolioDetailsFragment">
 
         <ScrollView
             android:layout_width="match_parent"
+            android:background="@color/colorSurface"
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/colorSurface"
+                tools:context=".ui.fragment.Portfolio.details.PortfolioDetailsFragment"
+                android:id="@+id/constraint_layout_portfolio_details_fragment"
+                >
 
 
                 <com.github.florent37.shapeofview.shapes.ArcView
@@ -34,7 +36,7 @@
                     app:shape_arc_position="bottom">
 
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/iv_video"
+                        android:id="@+id/iv_background"
                         imageUri="@{model.image}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -63,7 +65,7 @@
                     android:layout_marginLeft="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:text="@{model.name}"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorHeaderTitle"
                     android:textSize="@dimen/_13sdp"
                     app:layout_constraintStart_toEndOf="@id/iv_app"
                     app:layout_constraintTop_toTopOf="@id/iv_app"
@@ -79,6 +81,7 @@
                     android:drawableLeft="@drawable/calendar2"
                     android:drawablePadding="@dimen/_5sdp"
                     android:text="@{model.time}"
+                    android:textColor="@color/colorOnSurface"
                     android:textSize="@dimen/dimen_14sp"
                     app:layout_constraintStart_toEndOf="@id/iv_app"
                     app:layout_constraintTop_toBottomOf="@id/tv_name_app"
@@ -100,13 +103,13 @@
                         android:layout_marginHorizontal="@dimen/_10sdp"
                         android:layout_weight="1"
                         android:text="Githup"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/colorStrokeButton"
                         app:cornerRadius="@dimen/_2sdp"
                         app:icon="@drawable/ic_github"
                         app:iconGravity="textStart"
                         app:iconPadding="@dimen/_10sdp"
-                        app:iconTint="@android:color/black"
-                        app:strokeColor="@android:color/black"
+                        app:iconTint="@color/colorStrokeButton"
+                        app:strokeColor="@color/colorStrokeButton"
                         app:strokeWidth="1dp" />
 
                     <com.google.android.material.button.MaterialButton
@@ -117,7 +120,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="@color/button_full_color"
                         android:text="Play Store"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/colorStrokeButton"
                         app:icon="@drawable/ic_play_store"
                         app:iconGravity="textStart"
                         app:iconPadding="@dimen/_10sdp"
@@ -129,7 +132,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/colorHeaderBackground2"
+
                     app:layout_constraintTop_toBottomOf="@id/ll_button" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -153,7 +157,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/colorHeaderBackground2"
+
                     app:layout_constraintTop_toBottomOf="@id/rv_skills" />
 
 
@@ -169,24 +174,33 @@
                     app:layout_constraintTop_toBottomOf="@id/rv_skills"
                     tools:itemCount="3"
                     tools:listitem="@layout/row_image_app" />
+
                 <View
                     android:id="@+id/v_line4"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/colorHeaderBackground2"
                     app:layout_constraintTop_toBottomOf="@id/rv_image_app" />
+
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_description"
+                    android:id="@+id/tv_company_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:lineSpacingExtra="@dimen/_10sdp"
                     android:padding="@dimen/_10sdp"
                     android:text="@{model.description}"
-                    app:layout_constraintTop_toBottomOf="@id/rv_image_app"
+                    android:textColor="@color/colorHeaderTitle"
+                    app:layout_constraintTop_toBottomOf="@id/rv_image_app" />
 
-                    />
+                <View
+                    android:id="@+id/v_line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/colorHeaderBackground2"
+                    app:layout_constraintTop_toBottomOf="@id/tv_company_name" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tv_more_description"
@@ -194,21 +208,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:lineSpacingExtra="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
                     android:text="@{model.moreDescription}"
+                    android:textColor="@color/colorHeaderTitle"
                     app:layout_constraintTop_toBottomOf="@id/v_line3" />
-
-                <View
-                    android:id="@+id/v_line3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@android:color/darker_gray"
-                    app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>
 
-    </FrameLayout>
 </layout>

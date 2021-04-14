@@ -16,28 +16,30 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_oh"
+            android:id="@+id/tv_options"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#E2E2E2"
-            android:text="@{model.textTitle}"
-            tools:text="OH HELLO THERE "
-            android:paddingTop="@dimen/_10sdp"
-            android:paddingBottom="@dimen/_5sdp"
+            android:background="@color/colorHeaderBackground"
             android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"
-            android:textAppearance="?attr/textAppearanceHeadline1"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="@{model.textTitle}"
             android:textAllCaps="true"
-            android:textSize="@dimen/dimen_18sp"
+            android:textAppearance="?attr/textAppearanceHeadline1"
             android:textColor="@color/colorHeaderTitle"
+            android:textSize="@dimen/dimen_18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:text="OH HELLO THERE "
+
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorSurface"
             android:lineSpacingExtra="@dimen/dimen_12sp"
             android:padding="@dimen/_10sdp"
             android:paddingStart="@dimen/_10sdp"
@@ -45,10 +47,10 @@
             android:paddingEnd="@dimen/_10sdp"
             android:paddingBottom="@dimen/_10sdp"
             android:text="@{model.textInfo}"
+            android:textColor="@color/colorOnSurface"
+
             android:textSize="@dimen/dimen_18sp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_oh"
-            tools:text="asdddddddddddddddddddddsadddddddddddddddddddddddddddddddddddddsaddd"
-            android:textColor="@android:color/darker_gray"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/tv_options"
+            tools:text="asdddddddddddddddddddddsadddddddddddddddddddddddddddddddddddddsaddd" />
     </LinearLayout>
 </layout>

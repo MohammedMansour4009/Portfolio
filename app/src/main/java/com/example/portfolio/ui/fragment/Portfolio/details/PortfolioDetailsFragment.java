@@ -21,23 +21,18 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.portfolio.R;
 import com.example.portfolio.databinding.FragmentPortfolioDetailsBinding;
-import com.example.portfolio.model.portfolio.details.ImageApp;
 import com.example.portfolio.model.portfolio.details.PortfolioDetails;
-import com.example.portfolio.model.portfolio.details.Skills;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class PortfolioDetailsFragment extends Fragment {
 
-    FragmentPortfolioDetailsBinding binding;
+    private FragmentPortfolioDetailsBinding binding;
 
-    SkillsAdapter skillsAdapter;
+    private SkillsAdapter skillsAdapter;
 
-    PortfolioDetailsViewModel profileViewModel;
+    private PortfolioDetailsViewModel profileViewModel;
 
-    ImageAdapter imageAdapter;
+    private ImageAdapter imageAdapter;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -46,18 +41,20 @@ public class PortfolioDetailsFragment extends Fragment {
         initRecyclerViewInfoApp();
         getRemoteInfoApp();
 
+        overrideToolbar();
 
     }
 
     private void init() {
         profileViewModel = ViewModelProviders.of(this).get(PortfolioDetailsViewModel.class);
         profileViewModel.getPortfolioDetailsFromDatabase();
+        //It layout  hidden until the data comes from Firebase
+        binding.constraintLayoutPortfolioDetailsFragment.setVisibility(View.GONE);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        overrideToolbar();
         binding = FragmentPortfolioDetailsBinding.inflate(getLayoutInflater());
         return binding.getRoot();
     }
@@ -92,13 +89,16 @@ public class PortfolioDetailsFragment extends Fragment {
             public void onChanged(PortfolioDetails profile) {
                 binding.setModel(profile);
 
-                skillsAdapter.setPortfolioList(profile.getSkillsList());
+                skillsAdapter.setSkillsList(profile.getSkillsList());
                 binding.rvSkills.setAdapter(skillsAdapter);
                 binding.rvSkills.getAdapter().notifyDataSetChanged();
 
-                imageAdapter.setPortfolioList(profile.getImageAppList());
+                imageAdapter.setImageAppList(profile.getImageAppList());
                 binding.rvImageApp.setAdapter(imageAdapter);
                 binding.rvImageApp.getAdapter().notifyDataSetChanged();
+
+
+                binding.constraintLayoutPortfolioDetailsFragment.setVisibility(View.VISIBLE);
 
             }
         });

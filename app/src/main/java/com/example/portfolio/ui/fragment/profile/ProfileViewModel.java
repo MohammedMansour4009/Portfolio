@@ -25,12 +25,11 @@ public class ProfileViewModel extends ViewModel {
 
 
 
-    public void getProfileFromDatabase() {// its first task for View Model
-        mDatabase.child("info Activity Profile ").child("Profile").addValueEventListener(new ValueEventListener() {
+    public void getProfileFromDatabase() {
+        mDatabase.child("Profile").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 profileLiveData.setValue( snapshot.getValue(Profile.class));
-
             }
 
             @Override

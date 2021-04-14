@@ -1,20 +1,33 @@
 package com.example.portfolio.model.experience;
 
 public class InfoExperience {
+    private int id ;
     private String imageExperience;
     private String iconExperience;
     private String nameExperience;
-    private String descriptionExperience;
+    private String nameCompany;
+    private String companyLocation;
     private String madeExperience;
+
 
     public InfoExperience() {
     }
 
-    public InfoExperience(String imageExperience, String iconExperience, String nameExperience, String descriptionExperience, String madeExperience) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public InfoExperience(int id, String imageExperience, String iconExperience, String nameExperience, String nameCompany, String companyLocation, String madeExperience) {
+        this.id = id;
         this.imageExperience = imageExperience;
         this.iconExperience = iconExperience;
         this.nameExperience = nameExperience;
-        this.descriptionExperience = descriptionExperience;
+        this.nameCompany = nameCompany;
+        this.companyLocation = companyLocation;
         this.madeExperience = madeExperience;
     }
 
@@ -42,12 +55,12 @@ public class InfoExperience {
         this.nameExperience = nameExperience;
     }
 
-    public String getDescriptionExperience() {
-        return descriptionExperience;
+    public String getCompanyLocation() {
+        return companyLocation;
     }
 
-    public void setDescriptionExperience(String descriptionExperience) {
-        this.descriptionExperience = descriptionExperience;
+    public void setCompanyLocation(String companyLocation) {
+        this.companyLocation = companyLocation;
     }
 
     public String getMadeExperience() {
@@ -57,4 +70,12 @@ public class InfoExperience {
     public void setMadeExperience(String madeExperience) {
         this.madeExperience = madeExperience;
     }
+    public String getNameCompany() {
+        return nameCompany;
+    }
+
+    public void setNameCompany(String nameCompany) {
+        this.nameCompany = nameCompany;
+    }
+
 }

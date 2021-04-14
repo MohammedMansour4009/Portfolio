@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.splash.SplashActivity"
-    android:background="@android:color/white">
+    android:background="@color/colorSurface">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_avatar"

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.carViewHolder> {
+public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.SkillsViewHolder> {
     private List<Skills> skillsList;
 
     public SkillsAdapter( ) {//Because get data from out
@@ -29,19 +29,19 @@ public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.carViewHol
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public void setPortfolioList(List<Skills> SkillsList) {
+    public void setSkillsList(List<Skills> SkillsList) {
         this.skillsList = SkillsList;
     }
 
     @NonNull
     @Override
-    public SkillsAdapter.carViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//inflate of layout and Components
+    public SkillsAdapter.SkillsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//inflate of layout and Components
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_skills, parent, false);
-        return new SkillsAdapter.carViewHolder(RowSkillsBinding.bind(view));
+        return new SkillsAdapter.SkillsViewHolder(RowSkillsBinding.bind(view));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SkillsAdapter.carViewHolder holder, final int position) {// put new data ever time
+    public void onBindViewHolder(@NonNull SkillsAdapter.SkillsViewHolder holder, final int position) {// put new data ever time
         Skills skills = skillsList.get(position);
         holder.binding.setModel(skills);
     }
@@ -52,10 +52,10 @@ public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.carViewHol
         return skillsList.size();
     }
 
-    class carViewHolder extends RecyclerView.ViewHolder {//declare elements and but resources
+    class SkillsViewHolder extends RecyclerView.ViewHolder {//declare elements and but resources
         RowSkillsBinding binding;
 
-        public carViewHolder(@NonNull RowSkillsBinding binding) {
+        public SkillsViewHolder(@NonNull RowSkillsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

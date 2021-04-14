@@ -5,20 +5,31 @@ import java.util.List;
 public class Profile {
     private String textWelcome;
 
-    public Profile() {
-    }
+   private String image;
+    private String icHand;
 
-    private String image;
     private String textName;
     private String textWork;
     private List<MoreInfo> moreInfoList;
 
-    public Profile(String textWelcome, String image, String textName, String textWork, List<MoreInfo> moreInfoList) {
+
+    private String email;
+    private List<Media> mediaList;
+
+
+
+    public Profile() {
+    }
+
+    public Profile(String textWelcome, String image, String icHand, String textName, String textWork, List<MoreInfo> moreInfoList, String email, List<Media> mediaList) {
         this.textWelcome = textWelcome;
         this.image = image;
+        this.icHand = icHand;
         this.textName = textName;
         this.textWork = textWork;
         this.moreInfoList = moreInfoList;
+        this.email = email;
+        this.mediaList = mediaList;
     }
 
     public String getTextWelcome() {
@@ -35,6 +46,14 @@ public class Profile {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getIcHand() {
+        return icHand;
+    }
+
+    public void setIcHand(String icHand) {
+        this.icHand = icHand;
     }
 
     public String getTextName() {
@@ -59,5 +78,21 @@ public class Profile {
 
     public void setMoreInfoList(List<MoreInfo> moreInfoList) {
         this.moreInfoList = moreInfoList;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Media> getMediaList() {
+        return mediaList;
+    }
+
+    public void setMediaList(List<Media> mediaList) {
+        this.mediaList = mediaList;
     }
 }

@@ -23,10 +23,10 @@ import java.util.List;
 
 public class ExperienceFragment extends Fragment {
 
-    FragmentExperienceBinding binding;
-    InfoExperienceAdapter experienceAdapter;
-    List<Experience> experienceList;
-    ExperienceViewModel profileViewModel;
+    private FragmentExperienceBinding binding;
+    private InfoExperienceAdapter experienceAdapter;
+    private List<Experience> experienceList;
+    private ExperienceViewModel profileViewModel;
 
 
     @Override

@@ -1,7 +1,6 @@
 package com.example.portfolio.ui.fragment.profile;
 
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,20 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MoreInfoAdapter extends RecyclerView.Adapter<MoreInfoAdapter.carViewHolder> {
+public class MoreInfoAdapter extends RecyclerView.Adapter<MoreInfoAdapter.MoreInfoViewHolder> {
     private List<MoreInfo> moreInfoList;
-    private Context context;
-    private int index = 0;
 
-    public MoreInfoAdapter( ) {//Because get data from out
+
+    public MoreInfoAdapter( ) {
         this.moreInfoList = new ArrayList<>();
     }
 
-    @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
-        context = recyclerView.getContext();
-    }
+   
 
     public void setMoreInfoList(List<MoreInfo> moreInfoList) {
         this.moreInfoList = moreInfoList;
@@ -38,13 +32,13 @@ public class MoreInfoAdapter extends RecyclerView.Adapter<MoreInfoAdapter.carVie
 
     @NonNull
     @Override
-    public MoreInfoAdapter.carViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {//inflate of layout and Components
+    public MoreInfoAdapter.MoreInfoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_profile, parent, false);
-        return new MoreInfoAdapter.carViewHolder(RowProfileBinding.bind(view));
+        return new MoreInfoAdapter.MoreInfoViewHolder(RowProfileBinding.bind(view));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MoreInfoAdapter.carViewHolder holder, final int position) {// put new data ever time
+    public void onBindViewHolder(@NonNull MoreInfoAdapter.MoreInfoViewHolder holder, final int position) {
         MoreInfo category = moreInfoList.get(position);
         holder.binding.setModel(category);
     }
@@ -55,10 +49,10 @@ public class MoreInfoAdapter extends RecyclerView.Adapter<MoreInfoAdapter.carVie
         return moreInfoList.size();
     }
 
-    class carViewHolder extends RecyclerView.ViewHolder {//declare elements and but resources
+    class MoreInfoViewHolder extends RecyclerView.ViewHolder {//declare elements and but resources
         RowProfileBinding binding;
 
-        public carViewHolder(@NonNull RowProfileBinding binding) {
+        public MoreInfoViewHolder(@NonNull RowProfileBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

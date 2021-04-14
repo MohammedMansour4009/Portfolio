@@ -15,13 +15,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class PortfolioDetailsViewModel extends ViewModel {
-    private final String TAG2 = " PortfolioDetailsViewModel";
+    private final String TAG = " PortfolioDetailsViewModel";
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     public MutableLiveData<PortfolioDetails> profileLiveData = new MediatorLiveData<>();
 
 
 
-    public void getPortfolioDetailsFromDatabase() {// its first task for View Model
+    public void getPortfolioDetailsFromDatabase() {
         mDatabase.child("info Activity PortfolioDetails ").child("PortfolioDetails").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -30,7 +30,7 @@ public class PortfolioDetailsViewModel extends ViewModel {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("TAG", "onCancelled: in upload PortfolioDetailsFragment model form data base " + error.getMessage() + "code =" + error.getCode());
+                Log.d(TAG, "onCancelled: in upload PortfolioDetailsFragment model form data base " + error.getMessage() + "code =" + error.getCode());
             }
         });
 
